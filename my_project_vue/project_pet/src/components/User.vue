@@ -8,8 +8,6 @@
 
 <script>
   import qs from 'qs'
-
-
     export default {
       name: "User",
       data(){
@@ -24,7 +22,7 @@
             username:this.username,
             password: this.password
           })
-          this.axios.post('api/login',postdata).then((response)=>{
+          this.axios.post('/api/login',postdata).then((response)=>{
             this.message=response.data;
             console.log(this.message);
           }).catch((response)=>{
@@ -32,7 +30,6 @@
           })
         }
       }
-
     }
 </script>
 

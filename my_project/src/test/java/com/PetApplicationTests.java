@@ -2,6 +2,7 @@ package com;
 
 import com.entity.User;
 import com.mapper.UserMapper;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.annotation.MapperScan;
@@ -31,7 +32,12 @@ public class PetApplicationTests {
         System.out.println("user:"+user);
         userMapper.insert(user);
         userMapper.selectList(null).forEach(System.out::println);
+    }
 
+    @Test
+    public void testMD5(){
+        Md5Hash md5Hash = new Md5Hash("123");
+        System.out.println(md5Hash.toString());
     }
 
 }
